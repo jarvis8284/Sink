@@ -26,6 +26,18 @@ const locales: LocaleObject[] = [
     emoji: '🇫🇷',
   },
   {
+    code: 'id-ID',
+    file: 'id-ID.json',
+    name: 'Bahasa Indonesia',
+    emoji: '🇮🇩',
+  },
+  {
+    code: 'it-IT',
+    file: 'it-IT.json',
+    name: 'Italiano',
+    emoji: '🇮🇹',
+  },
+  {
     code: 'vi-VN',
     file: 'vi-VN.json',
     name: 'Tiếng Việt',
@@ -51,14 +63,4 @@ const locales: LocaleObject[] = [
   },
 ]
 
-function buildLocales() {
-  const useLocales = Object.values(locales).reduce((acc, data) => {
-    acc.push(data)
-
-    return acc
-  }, <LocaleObject[]>[])
-
-  return useLocales.sort((a, b) => a.code.localeCompare(b.code))
-}
-
-export const currentLocales = buildLocales()
+export const currentLocales = [...locales].sort((a, b) => a.code.localeCompare(b.code))
